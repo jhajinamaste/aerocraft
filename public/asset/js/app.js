@@ -74,9 +74,11 @@ $(document).ready(function(){
     if(val == 'date'){
       $(".eafter").hide();
       $(".edate").fadeIn();
+      $(".occurrence-type").val('date');
     }else{
       $(".edate").hide();
       $(".eafter").fadeIn();
+      $(".occurrence-type").val('occurrence');
     }
   });
 

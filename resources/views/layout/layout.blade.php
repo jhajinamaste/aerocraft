@@ -6,9 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="csrf-token" content="{{ csrf_token() }}" />
   <title>@yield('title')</title>
-  <link rel="stylesheet" href="{{ url('assets') }}/css/bootstrap.min.css">
-  <link rel="stylesheet" href="{{ url('assets') }}/css/ui.css">
-  <link rel="stylesheet" href="{{ url('assets') }}/css/style.css">
+  <link rel="stylesheet" href="{{ url('asset') }}/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{{ url('asset') }}/css/ui.css">
+  <link rel="stylesheet" href="{{ url('asset') }}/css/style.css">
 </head>
 <body>
   <div  class="pageLoader"></div>
@@ -31,10 +31,10 @@
     </div>
   </nav>
   @yield('content')
-  <script src="{{ url('assets') }}/js/jquery.min.js"></script>
-  <script src="{{ url('assets') }}/js/bootstrap.min.js"></script>
-  <script src="{{ url('assets') }}/js/ui.js"></script>
-  <script src="{{ url('assets') }}/js/swal.js"></script>
-  <script src="{{ url('assets') }}/js/app.js"></script>
+  <script src="{{ url('asset') }}/js/jquery.min.js"></script>
+  <script src="{{ url('asset') }}/js/bootstrap.min.js"></script>
+  <script src="{{ url('asset') }}/js/ui.js"></script>
+  <script src="{{ url('asset') }}/js/swal.js"></script>
+  <script src="{{ url('asset') }}/js/app.js"></script>
 </body>
 </html>

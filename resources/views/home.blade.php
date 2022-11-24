@@ -7,6 +7,7 @@
     <hr>
     <form>
       @csrf
+      <input type="hidden" name="occType" value="date" class="occurrence-type">
       <div class="form-group r-fg-mt r-fg-w">
         <label class="form-label" for="title">Title</label>
         <input type="text" name="title" class="form-control">
