@@ -79,7 +79,7 @@ class EventController extends Controller
       
       if($repeat == 'Week'){
         $lastWeek = date('Y-m-d', strtotime($sDate.'+'.$occurrences.' week'));
-        $repeatDay = $stmt[0]['day_repeat'];
+        $repeatDay = $repeatDay;
 
         $eventDates = [];
         
@@ -92,7 +92,7 @@ class EventController extends Controller
       }
 
       if($repeat == 'Month'){
-        $frequency = $stmt[0]['frequency'];
+        $frequency = $frequency;
         $nextMonth = date('Y-m-d', strtotime($startDate.'+'.$frequency.' months'));
         
         $eventDates = [];
@@ -109,6 +109,7 @@ class EventController extends Controller
       }
 
       if($repeat == 'Year'){
+        $occurrences = $occurrences-1;
         $lastYear = date('Y-m-d', strtotime($sDate.'+'.$occurrences.' years'));
 
         $eventDates = [];
@@ -129,7 +130,7 @@ class EventController extends Controller
       }
       
       if($repeat == 'Week'){
-        $repeatDay = $stmt[0]['day_repeat'];
+        $repeatDay = $repeatDay;
 
         $eventDates = [];
         
@@ -142,7 +143,7 @@ class EventController extends Controller
       }
 
       if($repeat == 'Month'){
-        $frequency = $stmt[0]['frequency'];
+        $frequency = $frequency;
         $nextMonth = $startDate;
         $eventDates = [];
           
@@ -217,8 +218,8 @@ class EventController extends Controller
   }
 
   public function event(Request $req){
-    $stmt = EventDates::where('event', '=', $req->id)->get();
-    
+    $stmt = EventDates::join('events', 'events.id', '=', 'event_dates.event')->where('event', '=', $req->id)->get();
+
     $html = '<div class="date-container">';
 
     foreach($stmt as $key => $val){
